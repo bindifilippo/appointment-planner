@@ -1,12 +1,11 @@
 import React from "react";
-import { ContactPicker } from "../contactPicker/ContactPicker"; // Assumendo che esista
+import { ContactPicker } from "../contactPicker/ContactPicker";
 
 const getTodayString = () => {
   const today = new Date();
   const day = String(today.getDate()).padStart(2, "0");
   const month = String(today.getMonth() + 1).padStart(2, "0");
   const year = today.getFullYear();
-  // Formato ISO richiesto dagli <input type="date">
   return `${year}-${month}-${day}`;
 };
 
@@ -43,16 +42,16 @@ export const AppointmentForm = ({
         />
       </label>
 
-     <label>
-      Date:
+      <label>
+        Date:
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          min={getTodayString()}  // sempre valida
+          min={getTodayString()}
           required
         />
-    </label>
+      </label>
 
       <label>
         Time:

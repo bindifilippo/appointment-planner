@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 import { TileList } from "../../components/tileList/TileList";
+import { formatEuropeanDate } from "../../utils/formatEuropeanDate";
 
 export const AppointmentsPage = ({
   appointments,
@@ -8,24 +9,32 @@ export const AppointmentsPage = ({
   addAppointment,
   deleteAppointment
 }) => {
-  // State locali per il form
   const [title, setTitle] = useState("");
   const [contact, setContact] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
-  // Submit del form
   const handleSubmit = (e) => {
     e.preventDefault();
-
     addAppointment(title, contact, date, time);
 
-    // Pulisce il form
     setTitle("");
     setContact("");
     setDate("");
     setTime("");
   };
+
+  // Prepara le tile con formattazione europea
+  const appointmentTiles = appointments.map(appt => ({
+    name: appt.title,
+    description: {
+      Contact: appt.contact,
+      Date: formatEuropeanDate(appt.date),
+      Time: appt.time
+    },
+    onDelete: () =>
+      deleteAppointment(appt.title, appt.contact, appt.date, appt.time)
+  }));
 
   return (
     <div>
@@ -49,12 +58,7 @@ export const AppointmentsPage = ({
 
       <section>
         <h2>Appointments</h2>
-        <TileList
-          tiles={appointments}
-          onDelete={(appt) =>
-            deleteAppointment(appt.title, appt.contact, appt.date, appt.time)
-          }
-        />
+        <TileList tiles={appointmentTiles} />
       </section>
     </div>
   );

@@ -12,48 +12,22 @@ import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
-  /*
-    State variables
-  */
   const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([]);
 
-  /*
-    add and delete new contact
-  */
+  // ----------------- Contatti -----------------
   const addContact = (name, phone, email) => {
-    const newContact = {
-      name,
-      phone,
-      email
-    };
-
-    setContacts(prevContacts => [...prevContacts, newContact]);
+    setContacts(prev => [...prev, { name, phone, email }]);
   };
 
   const deleteContact = (name) => {
-  setContacts(prev =>
-    prev.filter(contact => contact.name !== name)
-  );
-};
-
-  /*
-     add and delete a new appointment
-  */
-  const addAppointment = (title, contact, date, time) => {
-    const newAppointment = {
-      title,
-      contact,
-      date,
-      time
-    };
-
-    setAppointments(prevAppointments => [
-      ...prevAppointments,
-      newAppointment
-    ]);
+    setContacts(prev => prev.filter(contact => contact.name !== name));
   };
 
+  // ----------------- Appuntamenti -----------------
+  const addAppointment = (title, contact, date, time) => {
+    setAppointments(prev => [...prev, { title, contact, date, time }]);
+  };
 
   const deleteAppointment = (title, contact, date, time) => {
     setAppointments(prev =>
@@ -101,7 +75,6 @@ function App() {
   );
 
   return <RouterProvider router={router} />;
-  
 }
 
 export default App;

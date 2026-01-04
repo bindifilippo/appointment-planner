@@ -1,47 +1,37 @@
 import React, { useState, useEffect } from "react";
-
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
 export const ContactsPage = ({ contacts, addContact, deleteContact }) => {
-  /*
-    Local state for form fields
-  */
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
 
-  /*
-    Local state for duplicate check
-  */
   const [isDuplicate, setIsDuplicate] = useState(false);
 
-  /*
-    Check for duplicate contact name whenever
-    the name or contacts change
-  */
   useEffect(() => {
-    const duplicate = contacts.some(
-      contact => contact.name === name
-    );
+    const duplicate = contacts.some(contact => contact.name === name);
     setIsDuplicate(duplicate);
   }, [name, contacts]);
 
-  /*
-    Handle form submission
-  */
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!isDuplicate) {
       addContact(name, phone, email);
-
-      // Clear form after successful submission
       setName("");
       setPhone("");
       setEmail("");
     }
   };
+
+  const contactTiles = contacts.map(contact => ({
+    name: contact.name,
+    description: {
+      Phone: contact.phone,
+      Email: contact.email
+    },
+    onDelete: () => deleteContact(contact.name)
+  }));
 
   return (
     <div>
@@ -63,10 +53,7 @@ export const ContactsPage = ({ contacts, addContact, deleteContact }) => {
 
       <section>
         <h2>Contacts</h2>
-        <TileList
-          tiles={contacts}
-          onDelete={(tile) => deleteContact(tile.name)}
-        />
+        <TileList tiles={contactTiles} />
       </section>
     </div>
   );
