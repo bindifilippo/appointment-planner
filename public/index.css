@@ -22,9 +22,9 @@ nav > a {
 }
 
 
-nav > a:focus {
+nav > a:active {
   background-color: #054678;
-   color: #ffffff;
+  color: #ffffff;
   transform: scale(0.97);
 }
 
