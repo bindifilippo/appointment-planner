@@ -1,11 +1,11 @@
-Appointment Planner è una Single Page Application (SPA) sviluppata in React, pensata per gestire contatti e appuntamenti in modo semplice e intuitivo.
+Appointment Planner is a Single Page Application (SPA) built with React, designed to manage contacts and appointments in a simple and intuitive way.
 
-L’app consente di:
-	•	Creare e visualizzare una lista di contatti
-	•	Creare appuntamenti associandoli a un contatto
-	•	Selezionare data e ora tramite input interattivi
-	•	Navigare tra le sezioni senza ricaricare la pagina grazie a React Router
+The app allows users to:
+	•	Create and view a list of contacts
+	•	Create appointments and associate them with a contact
+	•	Select date and time through interactive input fields
+	•	Navigate between sections without page reloads thanks to React Router
 
-L’interfaccia è progettata con attenzione all’usabilità:
-	•	Navigazione con stato attivo persistente
-	•	Componenti riutilizzabili
+The interface is designed with usability in mind:
+	•	Navigation with persistent active state
+	•	Reusable and modular components
