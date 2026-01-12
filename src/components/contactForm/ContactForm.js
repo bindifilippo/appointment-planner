@@ -43,7 +43,7 @@ export const ContactForm = ({
         />
       </label>
 
-      <button type="submit">Add Contact</button>
+      <button type="submit" class="button-add">Add Contact</button>
     </form>
   );
 };

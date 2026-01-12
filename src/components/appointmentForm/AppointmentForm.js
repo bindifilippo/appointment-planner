@@ -63,7 +63,7 @@ export const AppointmentForm = ({
         />
       </label>
 
-      <button type="submit">Add Appointment</button>
+      <button type="submit" class="button-add">Add Appointment</button>
     </form>
   );
 };

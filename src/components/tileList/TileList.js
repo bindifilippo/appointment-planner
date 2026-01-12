@@ -36,7 +36,7 @@ const Tile = ({ name, description, onDelete }) => {
 // Componente TileList che mostra un array di tile
 export const TileList = ({ tiles }) => {
   return (
-    <div>
+    <div className="tile-list">
       {tiles.map((tile, index) => (
         <Tile
           key={index}
