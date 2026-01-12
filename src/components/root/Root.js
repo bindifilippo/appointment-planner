@@ -6,23 +6,33 @@ export const ROUTES = {
   };
 
 function Root() {
-    return (
-        <>
-        <h1>
-            Appointment Planner
-        </h1>
-            <nav>
-                <NavLink to={ROUTES.CONTACTS} >
-                Contacts
-                </NavLink>
-                <NavLink to={ROUTES.APPOINTMENTS} >
-                Appointments
-                </NavLink>
-            </nav>
-            <Outlet/>
-      </>
-    );
+  return (
+    <>
+      <h1>Appointment Planner</h1>
 
+      <nav>
+        <NavLink
+          to={ROUTES.CONTACTS}
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          Contacts
+        </NavLink>
+
+        <NavLink
+          to={ROUTES.APPOINTMENTS}
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          Appointments
+        </NavLink>
+      </nav>
+
+      <Outlet />
+    </>
+  );
 }
 
 export default Root;
