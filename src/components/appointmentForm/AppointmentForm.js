@@ -29,21 +29,21 @@ export const AppointmentForm = ({
   return (
     <form onSubmit={handleSubmit}>
       <label>
+        Contact:
+        <ContactPicker
+          contacts={contacts}
+          value={contact}
+          onChange={(e) => setContact(e.target.value)}
+        />
+      </label>
+      
+      <label>
         Title:
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-        />
-      </label>
-
-      <label>
-        Contact:
-        <ContactPicker
-          contacts={contacts}
-          value={contact}
-          onChange={(e) => setContact(e.target.value)}
         />
       </label>
 
