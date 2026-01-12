@@ -22,7 +22,7 @@ nav > a {
 }
 
 
-nav > a:active {
+nav > a:hover {
   background-color: #054678;
   color: #ffffff;
   transform: scale(0.97);

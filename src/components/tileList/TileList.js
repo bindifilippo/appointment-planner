@@ -13,12 +13,7 @@ const Tile = ({ name, description, onDelete }) => {
         <button
           onClick={onDelete}
           aria-label="delete"
-          style={{
-            border: "none",
-            background: "transparent",
-            cursor: "pointer",
-            fontWeight: "bold",
-          }}
+          className="delete-button"
         >
           ✕
         </button>
