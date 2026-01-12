@@ -108,6 +108,11 @@ select {
   box-sizing: border-box;
 }
 
+.tile-title{
+  font-size: 21px;
+  font-weight: bold;
+}
+
 .tile {
   margin: 0;
   font-size: 14px;
