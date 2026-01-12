@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ContactPicker } from "../contactPicker/ContactPicker";
 
 
@@ -22,6 +22,10 @@ export const AppointmentForm = ({
   setTime,
   handleSubmit
 }) => {
+
+  const dateRef = useRef(null);
+  const timeRef = useRef(null);
+
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -43,26 +47,34 @@ export const AppointmentForm = ({
         />
       </label>
 
-      <label>
-        Date:
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          min={getTodayString()}
-          required
-        />
-      </label>
+      <label
+      onClick={() => dateRef.current?.showPicker()}
+      style={{ cursor: "pointer" }}
+      >
+      Date:
+      <input
+        ref={dateRef}
+        type="date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+        min={getTodayString()}
+        required
+      />
+    </label>
 
-      <label>
-        Time:
-        <input
+    <label
+        onClick={() => timeRef.current?.showPicker()}
+        style={{ cursor: "pointer" }}
+    >
+      Time:
+    <input
+          ref={timeRef}
           type="time"
           value={time}
           onChange={(e) => setTime(e.target.value)}
           required
         />
-      </label>
+    </label>
 
       <button type="submit" class="button-add">Add Appointment</button>
     </form>
