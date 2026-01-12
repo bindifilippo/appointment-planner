@@ -23,7 +23,8 @@ nav > a {
 
 
 nav > a:focus {
-  background-color: #dedede;
+  background-color: #054678;
+   color: #ffffff;
   transform: scale(0.97);
 }
 
@@ -33,10 +34,17 @@ nav {
   margin-bottom: 20px;
 }
 
+h1 {
+  font-weight: bold;
+  color: #054678;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
 h2 {
   font-weight: bold;
   font-size: 18px;
-  color: #000000;
+  color: #054678;
   margin: 0;
   margin-bottom: 18px;
 }
@@ -81,7 +89,7 @@ input[type="submit"] {
   text-decoration: none;
   border-radius: 18px;
   border: 0px solid #000000;
-  background-color:#dedede;
+  background-color:#ffa203;
 
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
@@ -122,7 +130,20 @@ select {
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 12px;
-  background-color: #f0efef;
+  background-color: #e4f5fb;
 }
 
-
+.delete-button{
+  border: none;
+  background-color: #054678;   
+  color: white;                 
+  border-radius: 50%;           
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}

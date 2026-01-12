@@ -1,6 +1,7 @@
 import React from "react";
 import { ContactPicker } from "../contactPicker/ContactPicker";
 
+
 const getTodayString = () => {
   const today = new Date();
   const day = String(today.getDate()).padStart(2, "0");
