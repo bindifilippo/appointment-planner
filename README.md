@@ -35,6 +35,10 @@ I also added a few useful details to improve usability:
 - minimum date restriction to prevent selecting past dates
 - formatting appointment dates into European format (`DD/MM/YYYY`)
 
+## What I learned
+
+While building this project, I practiced how to structure a React application into reusable and maintainable components. I improved my understanding of routing in React, form handling with controlled inputs, and state lifting between parent and child components.
+
 ## Running the project
 
 To run the project locally:
@@ -42,3 +46,4 @@ To run the project locally:
 ```bash
 npm install
 npm start
+
